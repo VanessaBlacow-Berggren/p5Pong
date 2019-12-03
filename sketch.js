@@ -40,16 +40,17 @@ function keyReleased() {
 }
 
 function keyPressed() {
-    console.log(key);
-    if (key == 'A') {
+    // console.log(key);
+    if (key == 'a') {
+      console.log(key);
         left.move(-10);
-    } else if (key == 'Z') {
+    } else if (key == 'z') {
         left.move(10);
     }
 
-    if (key == 'J') {
+    if (key == 'j') {
         right.move(-10);
-    } else if (key == 'M') {
+    } else if (key == 'm') {
         right.move(10);
     }
 }

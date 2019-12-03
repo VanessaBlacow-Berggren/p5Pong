@@ -64,32 +64,38 @@ class Puck {
     }
 
     edges() {
-        if (this.y > 0 || this.y < height) {
+        if (this.y < 0 || this.y > height) {
             this.yspeed *= -1;
+
         }
 
-        if (this.x - this.r >= width) {
-          let diff = this.x - (p.x - p.x/2);
-          let angle = map(diff, 0, p.h, radians(225), radians(135));
-          this.xspeed = 5 * cos(angle);
-          this.yspeed = 5 * sin(angle);
-          this.x = p.x - p.w/2 - this.r;
-            // ding.play();
-            // leftscore++;
-            // this.reset();
-        }
+        if (this.x < 0 || this.x > width) {
 
-        if (this.x + this.r < 0) {
-          // let diff = this.x - (p.x - p.w/2);
-          // let rad = radians(45);
-          // let angle = map(diff, 0, p.h, -rad, rad);
-          this.xspeed = 5 * cos(angle);
-          this.yspeed = 5 * sin(angle);
-          this.x = p.x + p.w/2 + this.r;
-            // ding.play();
-            // rightscore++;
-            // this.reset();
-        }
+            this.xspeed *= -1;
+          }
+
+        // if (this.x - this.r >= width) {
+        //   let diff = this.x - (p.x - p.x/2);
+        //   let angle = map(diff, 0, this.x, radians(225), radians(135));
+        //   this.xspeed = -5 * cos(angle);
+        //   this.yspeed = -5 * sin(angle);
+        //   // this.x = p.x - p.w/2 - this.r;
+        //     // ding.play();
+        //     // leftscore++;
+        //     // this.reset();
+        // }
+        //
+        // if (this.x + this.r < 0) {
+        //   // let diff = this.x - (p.x - p.w/2);
+        //   // let rad = radians(45);
+        //   let angle = map(diff, 0, this.w, -rad, rad);
+        //   this.xspeed = 5 * cos(angle);
+        //   this.yspeed = 5 * sin(angle);
+        //   this.x = p.x + p.w/2 + this.r;
+        //     // ding.play();
+        //     // rightscore++;
+        //     // this.reset();
+        // }
     }
 
     show() {
