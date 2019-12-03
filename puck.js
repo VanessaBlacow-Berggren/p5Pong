@@ -15,13 +15,16 @@ class Puck {
             this.y + this.r > p.y - p.h/2 &&
             this.x - this.r < p.x + p.w/2) {
 
-            if (this.x > p.x) {
-                let diff = this.y - (p.y - p.h/2);
-                let rad = radians(45);
-                let angle = map(diff, 0, p.h, -rad, rad);
-                this.xspeed = 5 * cos(angle);
-                this.yspeed = 5 * sin(angle);
-                this.x = p.x + p.w/2 + this.r;
+            if (this.x < p.x) {
+              ding.play();
+              rightscore++;
+              this.reset();
+                // let diff = this.y - (p.y - p.h/2);
+                // let rad = radians(45);
+                // let angle = map(diff, 0, p.h, -rad, rad);
+                // this.xspeed = 5 * cos(angle);
+                // this.yspeed = 5 * sin(angle);
+                // this.x = p.x + p.w/2 + this.r;
             }
 
         }
@@ -33,12 +36,15 @@ class Puck {
             this.x + this.r > p.x - p.w/2) {
 
 
-            if (this.x < p.x) {
-                let diff = this.y - (p.y - p.h/2);
-                let angle = map(diff, 0, p.h, radians(225), radians(135));
-                this.xspeed = 5 * cos(angle);
-                this.yspeed = 5 * sin(angle);
-                this.x = p.x - p.w/2 - this.r;
+            if (this.x > p.x) {
+              ding.play();
+              leftscore++;
+              this.reset();
+                // let diff = this.y - (p.y - p.h/2);
+                // let angle = map(diff, 0, p.h, radians(225), radians(135));
+                // this.xspeed = 5 * cos(angle);
+                // this.yspeed = 5 * sin(angle);
+                // this.x = p.x - p.w/2 - this.r;
             }
         }
     }
@@ -66,15 +72,26 @@ class Puck {
         }
 
         if (this.x - this.r > width) {
-            ding.play();
-            leftscore++;
-            this.reset();
+          let diff = this.y - (p.y - p.h/2);
+          let angle = map(diff, 0, p.h, radians(225), radians(135));
+          this.xspeed = 5 * cos(angle);
+          this.yspeed = 5 * sin(angle);
+          this.x = p.x - p.w/2 - this.r;
+            // ding.play();
+            // leftscore++;
+            // this.reset();
         }
 
         if (this.x + this.r < 0) {
-            ding.play();
-            rightscore++;
-            this.reset();
+          let diff = this.y - (p.y - p.h/2);
+          let rad = radians(45);
+          let angle = map(diff, 0, p.h, -rad, rad);
+          this.xspeed = 5 * cos(angle);
+          this.yspeed = 5 * sin(angle);
+          this.x = p.x + p.w/2 + this.r;
+            // ding.play();
+            // rightscore++;
+            // this.reset();
         }
     }
 
