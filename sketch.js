@@ -10,10 +10,14 @@ function setup() {
     puck = new Puck();
     left = new Paddle(true);
     right = new Paddle(false);
+
+
 }
 
 function draw() {
+
     background(0);
+
 
     puck.checkPaddleRight(right);
     puck.checkPaddleLeft(left);
@@ -31,8 +35,8 @@ function draw() {
     textSize(32);
     text(leftscore, 32, 40);
     text(rightscore, width-64, 40);
-}
 
+}
 
 function keyReleased() {
     left.move(0);
@@ -40,9 +44,8 @@ function keyReleased() {
 }
 
 function keyPressed() {
-    // console.log(key);
+    console.log(key);
     if (key == 'a') {
-      console.log(key);
         left.move(-10);
     } else if (key == 'z') {
         left.move(10);
