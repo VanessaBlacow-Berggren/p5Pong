@@ -3,10 +3,11 @@
 
 let leftscore = 0;
 let rightscore = 0;
+let state = 'title';
 
 function setup() {
     createCanvas(600, 400);
-    ding = loadSound("data/ding.mp3");
+    //ding = loadSound("data/ding.mp3");
     puck = new Puck();
     left = new Paddle(true);
     right = new Paddle(false);
@@ -15,6 +16,18 @@ function setup() {
 }
 
 function draw() {
+
+  if (state === 'title') {
+    background(150);
+    textSize(80);
+    stroke(255);
+    fill(255);
+    text('GAME', 100, 100);
+  }
+
+  else if (state === 'level') {
+    level();
+  }
 
     background(0);
 

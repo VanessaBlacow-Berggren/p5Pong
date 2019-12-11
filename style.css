@@ -8,6 +8,7 @@ body{
   margin: auto;
   width: 80%;
   text-align: center;
+  background-image: url("../images/cracked-screen.jpg");
 
 }
 
@@ -20,15 +21,15 @@ canvas {
 }
 
 h1 {
-  color: Black;
+  color: white;
 }
 
 h2 {
-  color: Black;
+  color: white;
 }
 
 h3 {
-  color: Black;
+  color: white;
 }
 
 a {
